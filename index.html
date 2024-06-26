@@ -46,17 +46,18 @@
             color: #000000;
         }
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1f5ce2c9-1c50-4ddb-b108-e2169e9ca20d/dggjp5u-89f6ca04-72e3-4b7f-8af2-44eb0371c163.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFmNWNlMmM5LTFjNTAtNGRkYi1iMTA4LWUyMTY5ZTljYTIwZFwvZGdnanA1dS04OWY2Y2EwNC03MmUzLTRiN2YtOGFmMi00NGViMDM3MWMxNjMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FjITpGhl3-kMGQg0yuMrGWqsDyV2qpD3kufK306Q1pw');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            animation: backgroundAnimation 10s infinite alternate;
-        }
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1f5ce2c9-1c50-4ddb-b108-e2169e9ca20d/dggjp5u-89f6ca04-72e3-4b7f-8af2-44eb0371c163.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFmNWNlMmM5LTFjNTAtNGRkYi1iMTA4LWUyMTY5ZTljYTIwZFwvZGdnanA1dS04OWY2Y2EwNC03MmUzLTRiN2YtOGFmMi00NGViMDM3MWMxNjMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FjITpGhl3-kMGQg0yuMrGWqsDyV2qpD3kufK306Q1pw');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: backgroundAnimation 10s infinite alternate;
+}
         @keyframes backgroundAnimation {
             0% { background-position: center; }
             100% { background-position: top; }
@@ -163,6 +164,30 @@
         .footer-social-menu a {
             display: inline-block;
         }
+        .animated-text {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .animated-text:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .animated-text:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .animated-text:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -180,7 +205,11 @@
     </nav>
     <div class="hero" id="home">
         <h1>Welcome to Bugatti Vibes</h1>
+        <div class="animated-text">
+            <h2>Feel the Thrill of Speed</h2>
+        </div>
     </div>
+    
     <div class="content" id="about">
         <h2 class="section-title">About</h2>
         <p>This is a simple example of a single-file website with some cool features.</p>
@@ -293,7 +322,11 @@
             </a>
     
         </div>
-        <p>&copy; 2024 Bugatti Vibes. All rights reserved.</p>
+        <p class="animated-text">&copy; 2024 Bugatti Vibes. All rights reserved.</p>
+        <p class="animated-text">Unauthorized duplication or publication of any materials from this site is expressly prohibited.</p>
+        <p class="animated-text">Bugatti Vibes and the Bugatti Vibes logo are trademarks of Bugatti Vibes, Inc. Used with permission.</p>
+        <p class="animated-text">Privacy Policy | Terms of Service</p>
+        
     </footer>
 </body>
 </html>
