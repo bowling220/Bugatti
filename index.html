@@ -5,47 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bugatti Vibes</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
-        nav {
-            background-color: rgba(26, 26, 26, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid #e50914;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        nav .logo img {
-            height: 40px;
-            margin-right: 20px;
-        }
-        nav .links {
-            display: flex;
-            gap: 15px;
-        }
-        nav a {
-            color: #e50914;
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        nav a:hover {
-            background-color: #05a0dd;
-            color: #000000;
-        }
-        .hero {
+       body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+nav {
+    background-color: rgba(26, 26, 26, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #e50914;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo img {
+    height: 40px;
+    margin-right: 20px;
+}
+
+nav .links {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #e50914;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #05a0dd;
+    color: #000;
+}
+
+.hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1f5ce2c9-1c50-4ddb-b108-e2169e9ca20d/dggjp5u-89f6ca04-72e3-4b7f-8af2-44eb0371c163.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFmNWNlMmM5LTFjNTAtNGRkYi1iMTA4LWUyMTY5ZTljYTIwZFwvZGdnanA1dS04OWY2Y2EwNC03MmUzLTRiN2YtOGFmMi00NGViMDM3MWMxNjMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FjITpGhl3-kMGQg0yuMrGWqsDyV2qpD3kufK306Q1pw');
     background-size: cover;
@@ -58,136 +64,188 @@
     text-align: center;
     animation: backgroundAnimation 10s infinite alternate;
 }
-        @keyframes backgroundAnimation {
-            0% { background-position: center; }
-            100% { background-position: top; }
-        }
-        .content {
-            padding: 40px 20px;
-            text-align: center;
-            background-color: #141414;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            border: 2px solid #e50914;
-        }
-        .testimonials {
-            background-color: #1a1a1a;
-            padding: 40px 20px;
-        }
-        .testimonial {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #e50914;
-            border-radius: 10px;
-            background-color: #141414;
-        }
-        .testimonial p {
-            font-style: italic;
-        }
-        .testimonial .author {
-            text-align: right;
-            font-weight: bold;
-        }
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #e50914;
-            border-radius: 10px;
-            background-color: #141414;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #e50914;
-            border-radius: 5px;
-            background-color: #1a1a1a;
-            color: white;
-        }
-        .contact-form button {
-            padding: 10px 20px;
-            background-color: #e50914;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .contact-form button:hover {
-            background-color: #ff1a1a;
-        }
-        .footer {
-            background-color: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-        .section-title {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #e50914;
-        }
-        .parallax {
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
-        .parallax.section1 {
-            background-image: url('https://wallpapers.com/images/hd/top-10-car-wallpaper-w26du49b5l6rzpcm.jpg');
-            height: 300px;
-        }
-        .parallax.section2 {
-            background-image: url('https://e0.pxfuel.com/wallpapers/150/531/desktop-wallpaper-full-screen-gold-bugatti-car-bugatti-fire.jpg');
-            height: 300px;
-        }
-        .parallax.section3 {
-            background-image: url('https://img.freepik.com/premium-photo/car-covered-ice-is-covered-ice-word-bmw-is-bottom-right_860905-977.jpg');
-            height: 300px;
-        }
-        .footer-social-menu {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px 0;
-        }
-        .footer-social-menu a {
-            display: inline-block;
-        }
-        .animated-text {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards;
-        }
 
-        .animated-text:nth-child(2) {
-            animation-delay: 0.5s;
-        }
+@keyframes backgroundAnimation {
+    0% { background-position: center; }
+    100% { background-position: top; }
+}
 
-        .animated-text:nth-child(3) {
-            animation-delay: 1s;
-        }
+.content {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #141414;
+}
 
-        .animated-text:nth-child(4) {
-            animation-delay: 1.5s;
-        }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #e50914;
+}
+
+.testimonials {
+    background-color: #1a1a1a;
+    padding: 40px 20px;
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #e50914;
+    border-radius: 10px;
+    background-color: #141414;
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+.testimonial .author {
+    text-align: right;
+    font-weight: bold;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e50914;
+    border-radius: 10px;
+    background-color: #141414;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #e50914;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ff1a1a;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #e50914;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax.section1 {
+    background-image: url('https://wallpapers.com/images/hd/top-10-car-wallpaper-w26du49b5l6rzpcm.jpg');
+    height: 300px;
+}
+
+.parallax.section2 {
+    background-image: url('https://e0.pxfuel.com/wallpapers/150/531/desktop-wallpaper-full-screen-gold-bugatti-car-bugatti-fire.jpg');
+    height: 300px;
+}
+
+.parallax.section3 {
+    background-image: url('https://img.freepik.com/premium-photo/car-covered-ice-is-covered-ice-word-bmw-is-bottom-right_860905-977.jpg');
+    height: 300px;
+}
+
+.footer-social-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.footer-social-menu a {
+    display: inline-block;
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.animated-text:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.animated-text:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.animated-text:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav .links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero {
+        height: 80vh;
+        background-position: top;
+    }
+
+    .content {
+        padding: 20px 10px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial, .contact-form {
+        padding: 10px;
+    }
+}
     </style>
 </head>
 <body>
